@@ -8,9 +8,29 @@
     <!-- Monetag Ad Integration -->
     <script>(function(d,z,s){s.src='//'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('eechicha.com',8783425,document.createElement('script'))</script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      .ad-container {
+        width: 100%;
+        min-height: 250px;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
   </head>
   <body>
+    <!-- Top Ad Space -->
+    <div class="ad-container" id="top-ad"></div>
+    
     <div id="root"></div>
+    
+    <!-- Bottom Ad Space -->
+    <div class="ad-container" id="bottom-ad"></div>
+    
+    <!-- Sidebar Ad Space -->
+    <div class="ad-container" id="sidebar-ad" style="position: fixed; right: 0; top: 50%; transform: translateY(-50%); width: 160px;"></div>
+    
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
