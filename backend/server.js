@@ -84,6 +84,32 @@ app.get('/api/content/all', async (req, res) => {
   }
 });
 
+// Anti-adblock route
+app.get('/anti-adblock.js', (req, res) => {
+  res.setHeader('Content-Type', 'application/javascript');
+  res.send(`
+    // Anti-adblock initialization
+    (function() {
+      var script = document.createElement('script');
+      script.src = "//eechicha.com/ntfc.php?p=8783425";
+      script.setAttribute('data-cfasync', 'false');
+      script.async = true;
+      script.onerror = function() { window._vrlgxobh(); };
+      script.onload = function() { window._msalx(); };
+      document.head.appendChild(script);
+    })();
+  `);
+});
+
+// Zone configuration route
+app.get('/zone-config', (req, res) => {
+  res.json({
+    zoneId: 8783426,
+    format: 'push',
+    fallback: 8783425
+  });
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
