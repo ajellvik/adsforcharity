@@ -1,18 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    },
-    {
-      "source": "/anti-adblock.js",
-      "destination": "/api/anti-adblock.js"
-    },
-    {
-      "source": "/zone-config",
-      "destination": "/api/zone-config"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
